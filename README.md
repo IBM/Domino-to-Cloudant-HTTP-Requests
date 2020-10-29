@@ -103,4 +103,4 @@ Project Link: [https://github.com/IBM/Domino-to-Cloudant-HTTP-Requests](https://
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[documentation-file]: documentation/Domino%20to%20Cloudant%20HTTP
+[documentation-file]: documentation/Domino%20to%20Cloudant%20HTTP.docx
