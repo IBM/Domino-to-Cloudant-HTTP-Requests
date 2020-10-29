@@ -1,77 +1,106 @@
-<!-- This should be the location of the title of the repository, normally the short name -->
-# repo-template
+<p align="center">
+  <h3 align="center">Lotus Notes/Domino V9 to Cloudant (Bluemix) HTTP Requests</h3>
 
-<!-- Build Status, is a great thing to have at the top of your repository, it shows that you take your CI/CD as first class citizens -->
-<!-- [![Build Status](https://travis-ci.org/jjasghar/ibm-cloud-cli.svg?branch=master)](https://travis-ci.org/jjasghar/ibm-cloud-cli) -->
+  <p align="center">
+    This open source utility describes the solution to send HTTP GET and PUT requests from IBM Notes/Domino to Cloudant db. This will be useful for teams who are planning to re-write their Lotus Notes applications to modern technology (NodeJs, Angular etc) and deploy in Bluemix.
+    <br />
+    <a href="https://github.com/IBM/Domino-to-Cloudant-HTTP-Requests"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/IBM/Domino-to-Cloudant-HTTP-Requests">Scope</a>
+    ·
+    <a href="https://github.com/IBM/Domino-to-Cloudant-HTTP-Requests/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/IBM/Domino-to-Cloudant-HTTP-Requests/issues">Request Feature</a>
+  </p>
 
-<!-- Not always needed, but a scope helps the user understand in a short sentance like below, why this repo exists -->
-## Scope
 
-The purpose of this project is to provide a template for new open source repositories.
 
-<!-- A more detailed Usage or detailed explaination of the repository here -->
-## Usage
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-This repository contains some example best practices for open source repositories:
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+* [Instruction and Usage](#usage)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-* [LICENSE](LICENSE)
-* [README.md](README.md)
-* [CONTRIBUTING.md](CONTRIBUTING.md)
-* [MAINTAINERS.md](MAINTAINERS.md)
-<!-- A Changelog allows you to track major changes and things that happen, https://github.com/github-changelog-generator/github-changelog-generator can help automate the process -->
-* [CHANGELOG.md](CHANGELOG.md)
 
-> These are optional
 
-<!-- The following are OPTIONAL, but strongly suggested to have in your repository. -->
-* [dco.yml](.github/dco.yml) - This enables DCO bot for you, please take a look https://github.com/probot/dco for more details.
-* [travis.yml](.travis.yml) - This is a example `.travis.yml`, please take a look https://docs.travis-ci.com/user/tutorial/ for more details.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-These may be copied into a new or existing project to make it easier for developers not on a project team to collaborate.
+IBM introduced CORS supports for Domino REST API in Domino V10. Domino versions prior to V10 (V9.0.1 and above) don't have CORS support and we can not send Cross-Origin REST requests from Domino v9.0 (Not in easy way at least).  So it becomes very challenging to interact with Cloudant from Lotus Notes applications. You may have a need to get data from Cloudant and store it in Lotus Notes database, but without CORS support sending a REST request is very difficult.
 
-<!-- A notes section is useful for anything that isn't covered in the Usage or Scope. Like what we have below. -->
-## Notes
+This solution has a Java Agent that you can run from your Lotus Notes application. This agent can send HTTP GET and PUT requests to Cloudant, get JSON response and then create document in your Lotus Notes database. You can modify this agent to send UPDATE and DELETE requests as well. Included "java-json" jar file is used to convert JSON to Java Object and vice versa. 
 
-**NOTE: While this boilerplate project uses the Apache 2.0 license, when
-establishing a new repo using this template, please use the
-license that was approved for your project.**
+### Built With
 
-**NOTE: This repository has been configured with the [DCO bot](https://github.com/probot/dco).
-When you set up a new repository that uses the Apache license, you should
-use the DCO to manage contributions. The DCO bot will help enforce that.
-Please contact one of the IBM GH Org stewards.**
+* Lotus Notes V9.0.1
+* Lotus Notes Java Agent
+* Cloudant
 
-<!-- Questions can be useful but optional, this gives you a place to say, "This is how to contact this project maintainers or create PRs -->
-If you have any questions or issues you can create a new [issue here][issues].
 
-Pull requests are very welcome! Make sure your patches are well tested.
-Ideally create a topic branch for every separate change you make. For
-example:
 
-1. Fork the repo
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+<!-- GETTING STARTED -->
+## Getting Started
 
+To get a local copy up and running follow these simple steps.
+
+<!-- USAGE EXAMPLES -->
+## Instruction and Usage
+
+Please refer to the [Documentation][documentation-file]. This documentation explains in detail how you can setup your domino environment, jar files, Java Agent and how you can run the agent. This also has the Java Agent code.
+<br /><br />
+<b>As Java Agents can only be created and run from Lotus Notes, I have attached the code sample in the documentation.</b>
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/IBM/Domino-to-Cloudant-HTTP-Requests/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
 ## License
 
-All source files must include a Copyright and License header. The SPDX license header is 
-preferred because it can be easily scanned.
+This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
-If you would like to see the detailed LICENSE click [here](LICENSE).
+[Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
 
-```text
-#
-# Copyright 2020- IBM Inc. All rights reserved
-# SPDX-License-Identifier: Apache2.0
-#
-```
-## Authors
 
-Optionally, you may include a list of authors, though this is redundant with the built-in
-GitHub list of contributors.
 
-- Author: New OpenSource IBMer <new-opensource-ibmer@ibm.com>
+<!-- CONTACT -->
+## Contact
 
-[issues]: https://github.com/IBM/repo-template/issues/new
+Kirti Jha - kirtijha@in.ibm.com
+
+Project Link: [https://github.com/IBM/Domino-to-Cloudant-HTTP-Requests](https://github.com/IBM/Domino-to-Cloudant-HTTP-Requests)
+
+
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[documentation-file]: documentation/Domino%20to%20Cloudant%20HTTP
